@@ -17,7 +17,10 @@ class ItemModal extends Component {
     state = {
         modal: false,
         title: '',
-        subtitle: 'zxcxzczxczczxc'
+        subtitle: '',
+        content: '',
+        imageUrl: '',
+        progressiveness: 3
 
     }
 
@@ -38,6 +41,9 @@ class ItemModal extends Component {
         const newItem = {
             title: this.state.title,
             subtitle: this.state.subtitle,
+            content: this.state.content,
+            imageUrl: this.state.imageUrl,
+            progressiveness: this.state.progressiveness,
         }
 
         //Add item via addItem action
@@ -80,6 +86,27 @@ class ItemModal extends Component {
                                     placeholder="Add Article Subtitle"
                                     onChange={this.onChange}
                                 />
+                                <Input
+                                    type="text"
+                                    name="content"
+                                    id="item"
+                                    placeholder="Add Article Content"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="text"
+                                    name="imageUrl"
+                                    id="item"
+                                    placeholder="Add image url"
+                                    onChange={this.onChange}
+                                />
+                                <Input
+                                    type="number"
+                                    name="progressiveness"
+                                    id="item"
+                                    placeholder="Add Progressive level"
+                                    onChange={this.onChange}
+                                />
                                 <Button color="dark" style={{ marginTop: '2rem' }} block>
                                     Add Item
                                 </Button>
@@ -95,5 +122,6 @@ class ItemModal extends Component {
 const mapStateToProps = state => ({
     item: state.item
 });
+
 
 export default connect(mapStateToProps, { addItem })(ItemModal);
