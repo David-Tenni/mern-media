@@ -11,6 +11,18 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
+    content: {
+        type: String,
+        required: true
+    },
+    imageUrl: {
+        type: String,
+        required: true
+    },
+    progressiveness: {
+        type: Number,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now

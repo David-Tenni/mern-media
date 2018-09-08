@@ -19,7 +19,11 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newItem = Item({
         title: req.body.title,
-        subtitle: req.body.subtitle 
+        subtitle: req.body.subtitle,
+        content: req.body.content,
+        imageUrl: req.body.imageUrl,
+        progressiveness: req.body.progressiveness
+
     });
 
     newItem.save().then(item => res.json(item));
